@@ -18,139 +18,59 @@
     }
 
     .main-container {
-      padding-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
     }
 
-    /* Input and Button Styles */
+    .ui-box {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
     input, button {
-      padding: 12px;
+      padding: 15px;
       margin: 10px;
       font-size: 1.2em;
+      width: 100%;
       background-color: #333;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
+    }
+
+    input:focus, button:focus {
+      outline: none;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     }
 
     button:hover {
       background-color: #555;
       transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
 
     button:active {
       transform: translateY(1px);
     }
 
-    /* Game Button Animation */
-    .click-btn {
-      transition: transform 0.2s ease-out, background-color 0.2s ease-out;
-    }
-
-    .click-btn:active {
-      transform: scale(1.2);
-      background-color: #444;
-    }
-
-    /* Leaderboard Styles */
-    #leaderboard {
-      text-align: left;
-      margin-top: 20px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.4); /* Lighter background */
-      border-radius: 10px;
-      width: 70%;
-      margin: 20px auto;
-      height: 350px;
-      overflow-y: auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    }
-
-    #leaderboard-container {
-      font-size: 1.5em;
-    }
-
-    .leaderboard-entry {
-      padding: 10px;
-      font-size: 1.2em;
-      background-color: rgba(0, 0, 0, 0.3); /* Lighter background */
-      border-radius: 5px;
-      margin: 5px 0;
-      transition: background-color 0.3s;
-    }
-
-    .leaderboard-entry:hover {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    /* Player Clicks */
-    #player-clicks {
-      font-size: 1.5em;
-      color: #ff1700;
-      transition: color 0.3s ease;
-    }
-
-    #player-clicks:hover {
-      color: #f78e84;
-    }
-
-    /* Special Key Tooltip */
-    #special-key {
-      background-color: #444;
-      border-radius: 5px;
-      padding: 10px;
-      cursor: pointer;
-      position: relative;
-      display: inline-block;
-      font-size: 1.2em;
-      transition: all 0.2s ease;
-    }
-
-    #special-key:hover {
-      transform: scale(1.1);
-      background-color: #666;
-    }
-
-    #special-key-tooltip {
-      visibility: hidden;
-      position: absolute;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      padding: 5px;
-      border-radius: 5px;
-      font-size: 1em;
-      top: 35px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    #special-key:hover #special-key-tooltip {
-      visibility: visible;
-    }
-
-    /* Hide Sections */
     .hidden {
       display: none;
     }
 
-    /* Grid Background */
-    .background-grid {
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.3) 1px, transparent 1px), 
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
-      background-size: 30px 30px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.7;
-    }
-
-    /* Transitions for Sections */
     .fade-in {
       animation: fadeIn 0.5s ease-in;
     }
@@ -164,236 +84,176 @@
       }
     }
 
-    /* Player Info and Stats */
-    #player-name {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin-bottom: 20px;
+    #game-container {
+      text-align: center;
     }
 
-    #special-key-container {
-      margin-top: 20px;
-      font-size: 1.2em;
-    }
-
-    #made-by {
-      font-size: 2em;
-      margin-top: 20px;
-      color: #ff6f61;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.8);
-      transition: all 0.3s ease;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    #made-by:hover {
-      color: #ff6f61;
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 1);
-      transform: scale(1.1);
-    }
-
-    /* Account Creation Section */
-    #create-account-container {
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.3); /* Lighter transparency */
-      border-radius: 10px;
-      margin: 500px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-      animation: slideIn 0.5s ease-out;
-    }
-
-    #create-account-container h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #ff6f61;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-    }
-
-    #create-account-container input {
-      padding: 15px;
-      font-size: 1.2em;
-      border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.5); /* Lighter transparency */
-      margin-bottom: 15px;
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    #create-account-container button {
-      padding: 15px;
-      background-color: #ff6f61;
-      border-radius: 10px;
-      font-size: 1.5em;
-      color: white;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    }
-
-    #create-account-container button:hover {
-      background-color: #ff4f3b;
-      transform: translateY(-3px);
-    }
-
-    @keyframes slideIn {
-      0% {
-        transform: translateY(-20px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    /* UI Box Transparency and Blur Effect */
-    .ui-box {
-      background: rgba(0, 0, 0, 0.3); /* Lighter transparency */
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
-      transition: backdrop-filter 0.3s ease;
-    }
-
-    .ui-box:hover {
-      backdrop-filter: blur(12px);
+    .leaderboard-entry {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
-  <div class="background-grid"></div> <!-- Background Grid -->
-
   <div class="main-container">
-    <!-- Account Creation Section -->
     <div id="create-account-container" class="ui-box">
       <h2>Create Account</h2>
       <input type="text" id="new-username" placeholder="Username (Max 18 characters)" maxlength="18">
       <button onclick="createAccount()">Create Account</button>
-      <button onclick="loginPage()">Login</button> <!-- Button to switch to login page -->
+      <button onclick="loginPage()">Go to Login</button>
       <div id="account-error-message" class="hidden">Username already exists!</div>
     </div>
 
-    <!-- Login Section -->
     <div id="login-container" class="hidden ui-box">
       <h2>Login</h2>
       <input type="text" id="login-special-key" placeholder="Enter Special Key" maxlength="12">
       <button onclick="login()">Login</button>
       <div id="login-error-message" class="hidden">Invalid special key.</div>
+      <button onclick="createPage()">Go to Create Account</button>
     </div>
 
-    <!-- Game Section -->
-    <div id="game-container" class="hidden fade-in">
-      <div id="player-name">Player: <span id="player-name-display"></span></div>
+    <div id="game-container" class="hidden fade-in ui-box">
+      <h2>Welcome, <span id="player-name-display"></span>!</h2>
+      <p>Your Special Key: <span id="special-key-display"></span></p>
       <div id="player-clicks">Clicks: <span id="click-count">0</span></div>
-      <button class="click-btn" onclick="addClick()">Click Me!</button>
-
-      <div id="leaderboard">
+      <button onclick="addClick()">Click Me!</button>
+      <div id="leaderboard-container">
         <h3>Leaderboard</h3>
-        <div id="leaderboard-container"></div>
+        <!-- Leaderboard entries will go here -->
       </div>
-
-      <div id="special-key-container">
-        <div id="special-key" onclick="copyKey()">Special Key: <span id="special-key-value"></span></div>
-        <div id="special-key-tooltip">Click to copy</div>
-      </div>
-
-      <p id="made-by">Made by Mrlizard</p>
     </div>
   </div>
 
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-database-compat.js"></script>
+
   <script>
-    let userData = JSON.parse(localStorage.getItem("userData")) || {};
-    let clicks = 0;
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyDC4mXn_6JjkkaYNSrb2Tst4ypM2xleV5Y",
+      authDomain: "clicker-c7163.firebaseapp.com",
+      databaseURL: "https://clicker-c7163-default-rtdb.firebaseio.com",
+      projectId: "clicker-c7163",
+      storageBucket: "clicker-c7163.appspot.com",
+      messagingSenderId: "635598488433",
+      appId: "1:635598488433:web:9bcb0c2d0543dac08a2cd0"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    let userData = {}; // Stores user data
     let currentUsername = "";
+    let clicks = 0;
+    let specialKey = "";
     let isLoggedIn = false;
 
-    // Generate a Special Key
-    function generateSpecialKey() {
-      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      return Array.from({ length: 12 }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
+    // Switch to create account page
+    function createPage() {
+      document.getElementById("login-container").classList.add("hidden");
+      document.getElementById("create-account-container").classList.remove("hidden");
     }
 
-    // Create Account
-    function createAccount() {
-      const username = document.getElementById("new-username").value.trim();
-      if (!username || username.length > 18 || userData[username]) {
-        document.getElementById("account-error-message").classList.remove("hidden");
-        return;
-      }
-
-      // Generate a unique special key
-      const specialKey = generateSpecialKey();
-      userData[username] = { specialKey, clicks: 0 };
-
-      localStorage.setItem("userData", JSON.stringify(userData));
-
-      currentUsername = username;
-      isLoggedIn = true;
-      clicks = 0;
-
-      document.getElementById("create-account-container").classList.add("hidden");
-      document.getElementById("game-container").classList.remove("hidden");
-      document.getElementById("player-name-display").innerText = username;
-      document.getElementById("special-key-value").innerText = specialKey;
-
-      updateLeaderboard();
-    }
-
-    // Login
-    function login() {
-      const specialKey = document.getElementById("login-special-key").value.trim();
-      let foundUser = Object.keys(userData).find(user => userData[user].specialKey === specialKey);
-
-      if (foundUser) {
-        currentUsername = foundUser;
-        isLoggedIn = true;
-        clicks = userData[foundUser].clicks;
-
-        document.getElementById("login-container").classList.add("hidden");
-        document.getElementById("game-container").classList.remove("hidden");
-        document.getElementById("player-name-display").innerText = foundUser;
-        document.getElementById("special-key-container").style.display = "none";
-
-        updateLeaderboard();
-      } else {
-        document.getElementById("login-error-message").classList.remove("hidden");
-      }
-    }
-
-    // Add Clicks
-    function addClick() {
-      if (!isLoggedIn) return;
-
-      clicks++;
-      userData[currentUsername].clicks = clicks;
-      localStorage.setItem("userData", JSON.stringify(userData));
-
-      document.getElementById("click-count").innerText = clicks;
-      updateLeaderboard();
-    }
-
-    // Update Leaderboard
-    function updateLeaderboard() {
-      const leaderboardContainer = document.getElementById("leaderboard-container");
-      const leaderboard = Object.entries(userData)
-        .map(([username, data]) => ({ username, clicks: data.clicks }))
-        .sort((a, b) => b.clicks - a.clicks)
-        .slice(0, 10);
-
-      leaderboardContainer.innerHTML = leaderboard.map(entry => 
-        `<div class="leaderboard-entry">${entry.username}: ${entry.clicks} clicks</div>`).join("");
-    }
-
-    // Copy Special Key
-    function copyKey() {
-      navigator.clipboard.writeText(userData[currentUsername].specialKey);
-    }
-
-    // Show login page
+    // Switch to login page
     function loginPage() {
       document.getElementById("create-account-container").classList.add("hidden");
       document.getElementById("login-container").classList.remove("hidden");
     }
+
+    // Create account function
+    function createAccount() {
+      const username = document.getElementById("new-username").value.trim();
+      if (!username || username.length > 18) {
+        document.getElementById("account-error-message").classList.remove("hidden");
+        return;
+      }
+
+      // Check if username already exists
+      db.ref("users/" + username).get().then(snapshot => {
+        if (snapshot.exists()) {
+          document.getElementById("account-error-message").classList.remove("hidden");
+        } else {
+          const generatedSpecialKey = generateSpecialKey();
+          const newUser = { specialKey: generatedSpecialKey, clicks: 0 };
+          db.ref("users/" + username).set(newUser);
+          
+          currentUsername = username;
+          specialKey = generatedSpecialKey;
+          isLoggedIn = true;
+          clicks = 0;
+
+          // Hide account creation and show the game screen
+          document.getElementById("create-account-container").classList.add("hidden");
+          document.getElementById("game-container").classList.remove("hidden");
+
+          document.getElementById("player-name-display").innerText = username;
+          document.getElementById("special-key-display").innerText = specialKey;
+          updateLeaderboard();
+        }
+      });
+    }
+
+    // Login function
+    function login() {
+      const specialKeyInput = document.getElementById("login-special-key").value.trim();
+      db.ref("users").orderByChild("specialKey").equalTo(specialKeyInput).once("value").then(snapshot => {
+        if (snapshot.exists()) {
+          const user = snapshot.val();
+          const username = Object.keys(user)[0];
+          currentUsername = username;
+          specialKey = user[username].specialKey;
+          isLoggedIn = true;
+          clicks = user[username].clicks;
+
+          // Hide login and show game screen
+          document.getElementById("login-container").classList.add("hidden");
+          document.getElementById("game-container").classList.remove("hidden");
+
+          document.getElementById("player-name-display").innerText = username;
+          document.getElementById("special-key-display").innerText = specialKey;
+          updateLeaderboard();
+        } else {
+          document.getElementById("login-error-message").classList.remove("hidden");
+        }
+      });
+    }
+
+    // Add click (score) and update leaderboard
+    function addClick() {
+      if (!isLoggedIn) return;
+      clicks++;
+      db.ref("users/" + currentUsername + "/clicks").set(clicks);
+      document.getElementById("click-count").innerText = clicks;
+      updateLeaderboard();
+    }
+
+    // Update leaderboard display
+    function updateLeaderboard() {
+      const leaderboardContainer = document.getElementById("leaderboard-container");
+      db.ref("users").orderByChild("clicks").limitToLast(10).once("value").then(snapshot => {
+        const leaderboard = [];
+        snapshot.forEach(childSnapshot => {
+          const username = childSnapshot.key;
+          const clicks = childSnapshot.val().clicks;
+          leaderboard.push({ username, clicks });
+        });
+
+        leaderboard.sort((a, b) => b.clicks - a.clicks);
+        leaderboardContainer.innerHTML = leaderboard.map(entry =>
+          `<div class="leaderboard-entry">${entry.username}: ${entry.clicks} clicks</div>`
+        ).join("");
+      });
+    }
+
+    // Generate random special key
+    function generateSpecialKey() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      return Array.from({ length: 12 }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
+    }
   </script>
 </body>
 </html>
-
