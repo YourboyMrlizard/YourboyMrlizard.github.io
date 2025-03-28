@@ -1,149 +1,72 @@
-/* Set basic layout */
+/* Global Styles */
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: white;
-  text-align: center;
-  background: linear-gradient(to bottom, #6fa4d6 20%, #a2c5e8 100%);
-  min-height: 100vh;
-  background-attachment: fixed;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  position: relative;
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Background layer */
-.background-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3); /* Dimmed background */
-  z-index: 1;
+/* Container for login form */
+.login-container {
+    text-align: center;
+    border: 2px solid white;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #222;
+    width: 350px;
 }
 
-/* Container for all elements */
-.main-container {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
-  max-width: 400px;
-  width: 100%;
-  padding: 20px;
-  position: relative;
-  z-index: 2;
-}
-
-/* Login and Create Account Forms */
-#login-container, #create-account-container {
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  z-index: 3;
-}
-
+/* Login Heading */
 h2 {
-  color: #ff6f61;
-  font-size: 2em;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
 }
 
-/* Input fields */
-input {
-  padding: 15px;
-  font-size: 1.2em;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 15px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-  width: 91%;
-  color: white;
+/* Input Fields */
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    border: 1px solid white;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-/* Button styles */
 button {
-  padding: 15px;
-  background-color: #ff6f61;
-  border-radius: 10px;
-  font-size: 1.5em;
-  color: white;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  margin-bottom: 10px;
-  transition: all 0.3s ease;
+    padding: 12px 25px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #ff4f3b;
-  transform: translateY(-3px);
+    background-color: #777;
 }
 
-button:active {
-  transform: translateY(1px);
+/* Success and Error Messages */
+#error-message {
+    color: red;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
 }
 
-/* Error messages */
-#login-error-message, #account-error-message {
-  color: red;
-  display: none;
-  font-size: 1.2em;
-  margin-top: 10px;
-}
-
-/* Hiding and showing content */
-#login-container.hidden, #create-account-container.hidden {
-  display: none;
-}
-
-#game-container {
-  display: none;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  width: 100%;
-  z-index: 4;
-}
-
-/* Special key */
-#special-key-container {
-  margin-top: 15px;
-}
-
-span {
-  color: #00aaff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-}
-
-span:hover {
-  color: #0077cc;
-  text-decoration: underline;
-}
-
-/* Basic keyframes animation */
-@keyframes fadeInSlide {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#login-container, #create-account-container {
-  animation: fadeInSlide 0.5s ease-in-out;
+#success-message {
+    color: limegreen;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
 }
